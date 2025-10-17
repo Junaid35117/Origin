@@ -1,0 +1,16 @@
+name: A workflow for my Hello World App
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      - run: mvn compile
+      - run: docker build -t devopsimage .
+      - run: docker run --name devopscontainer -d devopsimage
+      - run: docker logs devopscontainer
