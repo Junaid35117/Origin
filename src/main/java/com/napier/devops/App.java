@@ -1,5 +1,7 @@
-package com.napier.sem;
+package com.napier.devops;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
